@@ -1,0 +1,15 @@
+{
+  "_说明": "固定信息只需填写一次，保存在此文件中。每次新案件无需重复填写。",
+  "law_firm": "河北禄存律师事务所",
+  "lawyer": "高卫华",
+  "lawyer_id": "132823197803202919",
+  "lawyer_phone": "17332694563",
+  "lawyer_addr": "河北省廊坊市香河县自在城小区底商2-0-007号（三强水厂营业厅西侧）",
+  "office_addr": "河北禄存律师事务所办公室",
+  "court_default": "大厂回族自治县人民法院",
+  "fee_standard": "冀律协2016第7号",
+  "fee_method": "现金",
+  "pay_method": "签订合同之日支付",
+  "delegate_period_default": "一审终结之日止",
+  "contract_no_prefix": "（2026）冀禄律民字第"
+}
