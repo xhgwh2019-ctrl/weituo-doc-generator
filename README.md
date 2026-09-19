@@ -52,9 +52,36 @@ python3 app.py
 
 ## 生成结果
 
-`输出/委托人与对方案由纠纷手续_年-月-日.docx`
-- 含封面 + 6 份文书，每部分另起一页
-- 文件名示例：`王廷艳与王艳萍土地承包经营权转让合同纠纷手续_2026-9-18.docx`
+`输出/委托人与对方案由纠纷_年-月-日/` 文件夹：
+- `1~6_*.docx`：6 份独立文档（签名处留白手写，可直接分别打印）
+- `0_合一版_6份齐全_*.docx`：合一版（无封面，每份另起一页、奇数页起始，双面打印即出 6 份）
+
+## Windows 版（给其他电脑用）
+
+### 方法一：免安装版 / 安装包（推荐，需先构建一次）
+
+Mac 不能直接编译 Windows 程序，提供两种构建方式：
+
+**A. 全自动（推荐）：** 把本项目推到 GitHub，Actions 会自动编译。
+
+```bash
+cd "/Users/gaoweihua/项目/一次性委托文件生成器"
+ gh repo create 委托文件生成器 --public --source=. --push  # 需先装 gh 并登录
+ # 或手动：GitHub 新建仓库 → git remote add origin <地址> → git push -u origin master
+ git tag v1.0.0 && git push --tags   # 打标签触发构建
+```
+
+之后在 GitHub 仓库页 → Actions → 下载 `windows-portable`（免安装版 zip）
+或 `windows-installer`（安装包 exe）。也可以点右上角 `...` 手动 Run workflow。
+
+**B. 在 Windows 电脑上本地构建：** 把整个文件夹拷过去，双击 `build_windows.bat`，
+得到 `dist\委托文件生成器\`（直接可用）；再用 Inno Setup 打开 `installer.iss` 编译即得安装包。
+
+### 方法二：装 Python 直接跑（不懂打包时最省事）
+
+1. Windows 上安装 Python 3.10+（官网 python.org，**勾选 Add python.exe to PATH**）
+2. 把本文件夹拷过去，双击 `启动委托生成器.bat`
+3. 首次自动装依赖，之后打开即用（config.json / 输出 与 Mac 通用）
 
 ## 目录结构
 
