@@ -25,6 +25,7 @@ jobs:
       - name: Inno Setup
         run: |
           choco install innosetup -y
+          Invoke-WebRequest -Uri https://github.com/jrsoftware/issrc/raw/main/Files/Languages/ChineseSimplified.isl -OutFile "C:\Program Files (x86)\Inno Setup 6\Languages\ChineseSimplified.isl"
           & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer.iss
       - uses: actions/upload-artifact@v4
         with:
